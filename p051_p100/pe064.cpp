@@ -1,11 +1,11 @@
 #include <math.h>
 #include <stdio.h>
 
+int N=10000;
+
 long gcd(long a,long b){
     return b==0?a:gcd(b,a%b);
 }
-
-int N=10000;
 
 int main(){
     int count=0;
