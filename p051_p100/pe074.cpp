@@ -7,18 +7,18 @@ int L=60;
 int fac[10];
 std::map<int,int> len;
 
-int facSum(int n){
+int fac_sum(int n){
     int s;
     for(s=0;n>0;n/=10)
         s+=fac[n%10];
     return s;
 }
 
-int leng(int n){
+int chain_len(int n){
     if(!len[n]){
-        int s=facSum(n);
+        int s=fac_sum(n);
         if(s==n) len[n]=1;
-        else len[n]=1+leng(s);
+        else len[n]=1+chain_len(s);
     }
     return len[n];
 }
@@ -33,6 +33,6 @@ int main(){
 
     int count=0;
     for(int n=1;n<N;n++)
-        count+=leng(n)==L;
+        count+=chain_len(n)==L;
     std::cout << count;
 }

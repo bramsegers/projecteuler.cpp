@@ -27,7 +27,7 @@ void search(map<int,vector<int>> &fm,vector<int> &pr,int t,int sum,string path){
 int main(){
     int n=10000;
     auto primes=Primes(n);
-    auto pr=primes.pr;
+    auto pr=primes.vec;
     map<int,vector<int>> fam;
     for(int i=0;i<pr.size();i++){
         int p=pr[i];

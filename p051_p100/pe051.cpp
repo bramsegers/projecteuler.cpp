@@ -18,7 +18,7 @@ int replace(int n,int i,int j){
 
 int main(){
     auto primes=Primes(1000000);
-    for(int p:primes.pr){
+    for(int p:primes.vec){
         int c=p;
         int dig=0;
         while(c>0){
