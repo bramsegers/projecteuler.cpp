@@ -14,7 +14,7 @@ bool anagram(int p1,int p2){
 int main(){
     int P1,P2,P3,N=10000;
     auto primes=Primes(N);
-    for(int p1:primes.pr){
+    for(int p1:primes.vec){
         for(int i=2;i<(N-p1)/2;i+=2){
             int p2=p1+i;
             int p3=p2+i;
@@ -26,5 +26,5 @@ int main(){
             P1=p1;P2=p2;P3=p3;
         }
     }
-    printf("ans=%d%d%d\n",P1,P2,P3);
+    printf("%d%d%d\n",P1,P2,P3);
 }

@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../util/primes.h"
 
 int N=500;

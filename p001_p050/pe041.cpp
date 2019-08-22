@@ -12,8 +12,8 @@ bool pandigital(int p){
 }
 
 int main(){
-    auto pr=Primes(987654321).pr;
-    int i=pr.size()-1;
-    while(!pandigital(pr[i])) i--;
-    printf("%d\n",pr[i]);
+    auto p=Primes(987654321).vec;
+    int i=p.size()-1;
+    while(!pandigital(p[i])) i--;
+    printf("%d\n",p[i]);
 }

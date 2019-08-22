@@ -1,23 +1,23 @@
-#include <iostream>
+#include <stdio.h>
 #include "../util/primes.h"
 
 int N=1000000;
 
 int main(){
-    auto P=Primes(N);
-    auto pr=P.pr;
-    int pi=pr.size();
+    auto primes=Primes(N);
+    auto p=primes.vec;
+    int pi=p.size();
     int mlen=0,msum;
     for(int i=0;i<pi;i++){
-        for(int sum=pr[i],j=i+1;j<pi;j++){
-            sum+=pr[j];
+        for(int sum=p[i],j=i+1;j<pi;j++){
+            sum+=p[j];
             if(sum>N) break;
             if(j-i+1<=mlen) continue;
-            if(!P.get(sum)) continue;
+            if(!primes.get(sum)) continue;
             mlen=j-i+1;
             msum=sum;
-            std::cout << mlen << ' ' << pr[i] << ' ' << pr[j] << ' ' << msum << '\n';
+            printf("%d %lld %lld %d\n",mlen,p[i],p[j],msum);
         }
     }
-    std::cout << msum;
+    printf("%d\n",msum);
 }

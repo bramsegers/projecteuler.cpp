@@ -5,7 +5,7 @@
 bool goldbachIsRight(int i){
     static auto primes=Primes(1000000);
     if(primes.get(i)) return true;
-    for(int p:primes.pr){
+    for(int p:primes.vec){
         int s=(i-p)/2;
         if(p==2||s<1) continue;
         int a=(int) sqrt(s);

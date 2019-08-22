@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "../util/primes.h"
 
 int N=1000000;
