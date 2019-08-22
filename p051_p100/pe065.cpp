@@ -28,3 +28,4 @@ int main(){
         sum+=p1.digitAt(i);
     std::cout << sum << "\n";
 }
+
