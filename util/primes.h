@@ -41,9 +41,9 @@ class Primes{
             if(i<2) return false;
             if(i==2) return true;
             if((i&1)==0) return false;
-            if(i>N*N) throw "prime out of range";
             if(i<=N) return ((sieve[i>>6]&(1<<((i>>1)&31)))==0);
-            for(auto p:vec){
+            if(i>N*N) throw "prime out of range";
+            for(long long p:vec){
                 if(p*p>i) return true;
                 if(i%p==0) return false;
             }
@@ -52,7 +52,7 @@ class Primes{
 
         long long totient(long long i){
             long long t=i;
-            for(auto f:factors(i))
+            for(factor f:factors(i))
                 t-=t/f.prime;
             return t;
         }
