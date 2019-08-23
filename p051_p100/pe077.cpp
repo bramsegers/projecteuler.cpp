@@ -2,13 +2,13 @@
 #include "../util/primes.h"
 
 int N=5000;
-auto pr=Primes(N).vec;
+auto p=Primes(N).vec;
 
 int ways(int n,int i){
     if(n==0) return 1;
     int rv=0;
-    for(int j=i;pr[j]<=n;j++)
-        rv+=ways(n-pr[j],j);
+    for(int j=i;p[j]<=n;j++)
+        rv+=ways(n-p[j],j);
     return rv;
 }
 
