@@ -26,6 +26,7 @@ class Primes{
         }
 
         std::vector<factor> factors(long long n){
+            if(n>N*N) throw "prime out of range";
             int e;
             std::vector<factor> f;
             for(long long p:vec){
@@ -37,23 +38,28 @@ class Primes{
             return f;
         }
 
-        bool get(long long i){
-            if(i<2) return false;
-            if(i==2) return true;
-            if((i&1)==0) return false;
-            if(i<=N) return ((sieve[i>>6]&(1<<((i>>1)&31)))==0);
-            if(i>N*N) throw "prime out of range";
+        bool get(long long n){
+            if(n<2) return false;
+            if(n==2) return true;
+            if((n&1)==0) return false;
+            if(n<=N) return ((sieve[n>>6]&(1<<((n>>1)&31)))==0);
+            if(n>N*N) throw "prime out of range";
             for(long long p:vec){
-                if(p*p>i) return true;
-                if(i%p==0) return false;
+                if(p*p>n) return true;
+                if(n%p==0) return false;
             }
             return true;
         }
 
-        long long totient(long long i){
-            long long t=i;
-            for(factor f:factors(i))
-                t-=t/f.prime;
+        long long totient(long long n){
+            if(n>N*N) throw "prime out of range";
+            long long e,t=n;
+            for(long long p:vec){
+                if(n==1 || p*p>n) break;
+                for(e=0;n%p==0;e++) n/=p;
+                if(e>0) t-=t/p;    
+            }
+            if(n>1) t-=t/n;
             return t;
         }
 

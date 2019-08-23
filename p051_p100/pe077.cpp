@@ -3,29 +3,19 @@
 #include "../util/primes.h"
 
 int N=5000;
-auto primes=Primes(N).vec;
+auto pr=Primes(N).vec;
 
-int ways(int a,int b,std::map<int,int> &m){
-    int i=N*a+b;
-    if(b<0) return 0;
-    if(b==0) return m[i]=1;
-    if(!m[i]){
-        for(int p:primes){
-            if(p>a) break;
-            m[i]+=ways(p,b-p,m);
-        }
-    }
-    return m[i];
+int ways(int n,int i){
+    if(n==0) return 1;
+    int rv=0;
+    for(int j=i;pr[j]<=n;j++)
+        rv+=ways(n-pr[j],j);
+    return rv;
 }
 
 int main(){
-    for(int n=0;;n++){
-        std::map<int,int> m;
-        int w=0;
-        for(int p:primes){
-            if(p>=n) break;
-            w+=ways(p,n-p,m);
-        }
+    for(int n=1;;n++){
+        int w=ways(n,0);
         printf("n:%d ways:%d\n",n,w);
         if(w>N) break;
     }
