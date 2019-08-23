@@ -1,4 +1,3 @@
-#include <map>
 #include <stdio.h>
 #include "../util/primes.h"
 
