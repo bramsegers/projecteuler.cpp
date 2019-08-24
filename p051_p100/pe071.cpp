@@ -8,8 +8,10 @@ int main(){
     LL n2=0,d2=1;
 	for(LL i=N;i>1;i--){
     	LL c=n*i/d;
-		if(c*d2>=i*n2 && i%d>0)
-            {n2=c;d2=i;}
+		if(c*d2>=i*n2 && i%d>0){
+			n2=c;
+			d2=i;
+		}
     }
 	printf("%lld/%lld\n",n2,d2);
 }

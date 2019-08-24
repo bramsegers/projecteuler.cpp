@@ -11,8 +11,8 @@ int gcd(int a,int b){
 int main(){
     int count=0;
     for(int q=N;q>1;q--){
-        int a=(p1*q/q1)+1;
-        int b=((p2*q-1)/q2);
+        int a=p1*q/q1+1;
+        int b=(p2*q-1)/q2;
         if(a>b) continue;
         for(int p=a;p<=b;p++)
             count+=gcd(p,q)==1;
