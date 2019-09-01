@@ -9,7 +9,7 @@ void timer(){
         .count();
     if(last<0) last=ms;
     else{
-        printf("%dms\n",ms-last);
+        printf("%lldms\n",ms-last);
         last=-1;
     }
 }
