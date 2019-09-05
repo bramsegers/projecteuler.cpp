@@ -2,7 +2,7 @@
 #include <math.h>
 #include <iostream>
 
-using LL=unsigned long long;
+using LL=long long;
 
 int D=10;
 auto primes=Primes(pow(10,0.5*D)+1);
@@ -24,7 +24,7 @@ int main(){
             LL N=0,S=0;
             gen_nums(N,S,0,0,d,r);
             if(N>0){
-                printf("%d %5d %5llu %16llu\n",d,D-r,N,S);
+                printf("%d %5d %5lld %16lld\n",d,D-r,N,S);
                 sum+=S;
                 break;
             }

@@ -1,7 +1,7 @@
 #include "../util/strings.h"
 #include <iostream>
 
-bool valid(int * a,int n){
+bool valid(int* a,int n){
     for(int c,d,p,s,e,b,k,j=1;j<(1<<n);j++){
         for(b=0,k=0;k<n;k++) b+=(j>>k)&1;
         for(c=1;c<(1<<b)-1;c++){

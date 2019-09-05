@@ -5,7 +5,7 @@ int N=100;
 
 int main(){
 
-    int e[N]={2,1};
+    int* e=new int[N]{2,1};
     for(int i=1,j=2;j<N;i++){
         e[j++]=2*i;
         e[j++]=1;
@@ -26,5 +26,5 @@ int main(){
     int sum=0;
     for(int i=0;i<p1.numberOfDigits();i++)
         sum+=p1.digitAt(i);
-    std::cout << sum << "\n";
+    std::cout << sum;
 }

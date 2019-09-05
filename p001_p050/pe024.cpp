@@ -1,15 +1,15 @@
 #include <iostream>
-using namespace std;
 
 int N=1000000;
 
-void perm(string s,string p=""){
-    int n=s.length();
-    if(n==0 && --N==0) cout << p << "\n";
-    for(int i=0;N>0 && i<n;i++)
-        perm(s.substr(0,i)+s.substr(i+1),p+s[i]);
+void perm(long long n,int mask){
+    if(mask+1==1<<10 && --N==0) 
+        std::cout << n;
+    for(int i=0;i<10;i++)
+        if(((mask>>i)&1)==0)
+            perm(10*n+i,mask|(1<<i));
 }
 
 int main(){
-    perm("0123456789");
+    perm(0,0);
 }

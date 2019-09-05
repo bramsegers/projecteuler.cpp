@@ -3,7 +3,7 @@
 int N=7;
 int min;
 
-bool valid(int * a,int n){
+bool valid(int* a,int n){
     for(int i=1;i<(1<<(n-1));i++){
         int b=0,j=(1<<(n-1))|i;
         for(int k=0;k<n;k++) b+=(j>>k)&1;
@@ -21,15 +21,15 @@ bool valid(int * a,int n){
     return true;
 }
 
-void dp(int * a,int n,int m,int i,int s){
+void search(int* a,int n,int m,int i,int s){
     if(i==n){
         min=s;
         for(int i=0;i<n;i++) std::cout<<a[i];
-        std::cout<<" "<<min<<"\n";
+        std::cout << " " << min << "\n";
     }
     for(int k=m;k<=(1<<n) && s+k<min;k++){
         a[i]=k;
-        if(valid(a,i+1)) dp(a,n,k+1,i+1,s+k);
+        if(valid(a,i+1)) search(a,n,k+1,i+1,s+k);
     }
 }
 
@@ -37,6 +37,6 @@ int main(){
     for(int n=1;n<=N;n++){
         min=1<<30;
         std::cout << n << "\n";
-        dp(new int[n],n,1,0,0);
+        search(new int[n],n,1,0,0);
     }
 }

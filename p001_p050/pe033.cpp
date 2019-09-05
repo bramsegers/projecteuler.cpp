@@ -1,8 +1,5 @@
+#include "../util/gcd.h"
 #include <stdio.h>
-
-int gcd(int a,int b){
-    return b==0?a:gcd(b,a%b);
-}
 
 int removeFirst(int n,int r){
     int rv=0,m=1,f=0,d;

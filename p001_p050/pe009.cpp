@@ -1,4 +1,4 @@
-#include <cstdio>
+#include <stdio.h>
 
 int N=1000;
 

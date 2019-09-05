@@ -25,11 +25,10 @@ string nums =
     "20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 "
     "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 ";
 
-const int N=20;
-const int L=4;
-int m[N][N];
+int N=20;
+int L=4;
 
-int prod(int j,int i,int k){
+int prod(int j,int i,int k,int** m){
     int p=1;
     int dx=k<3?1:0;
     int dy=k==1?0:k==2?-1:1;
@@ -44,16 +43,18 @@ int prod(int j,int i,int k){
 } 
 
 int main(){
+    int** m=new int*[N];
+    for(int i=0;i<N;i++) 
+        m[i]=new int[N];
     auto s=strsplit(nums," ");
     for(int j=0;j<N;j++)
         for(int i=0;i<N;i++)
-            m[j][i]=atoi(s[N*j+i].c_str());
-
+            m[j][i]=stoi(s[N*j+i]);
     int ans=0;
     for(int j=0;j<N;j++)
         for(int i=0;i<N;i++)
             for(int k=0;k<4;k++)
-                ans=max(ans,prod(j,i,k));
+                ans=max(ans,prod(j,i,k,m));
 
     cout << ans;
 }

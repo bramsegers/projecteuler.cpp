@@ -1,5 +1,5 @@
-#include <iostream>
 #include "../util/primes.h"
+#include <iostream>
 
 int A=1000;
 int B=1000;

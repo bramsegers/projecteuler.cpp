@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 double pentagonal(int n){
     int a=(int)((0.5+sqrt(0.25+6*n))/3);
@@ -7,7 +7,8 @@ double pentagonal(int n){
 }
 
 int main(){
-    int p[4000],len=0;
+    int len=0;
+    int* p=new int[4000];
     for(int i=1;;i++){
         int p2=(i*((3*i)-1)/2);
         for(int j=0;j<len;j++){

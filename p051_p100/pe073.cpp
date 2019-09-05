@@ -1,12 +1,9 @@
+#include "../util/gcd.h"
 #include <stdio.h>
 
 int p1=1,q1=3;
 int p2=1,q2=2;
 int N=12000;
-
-int gcd(int a,int b){
-    return b==0?a:gcd(b,a%b);
-}
 
 int main(){
     int count=0;

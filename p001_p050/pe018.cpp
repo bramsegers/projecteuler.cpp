@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-int N=20;
-int tri[20][20]={
+const int N=15;
+int tri[N][N]={
     {75},
     {95,64},
     {17,47,82},

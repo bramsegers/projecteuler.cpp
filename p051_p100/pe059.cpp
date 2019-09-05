@@ -10,7 +10,7 @@ int main(){
     int text_length=nums.size();
     int cipher[text_length];
     for(int i=0;i<text_length;i++)
-        cipher[i]=atoi(nums[i].c_str());
+        cipher[i]=stoi(nums[i]);
 
     int pw[pw_length];
     for(int i=0;i<pow(26,pw_length);i++){

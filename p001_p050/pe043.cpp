@@ -1,31 +1,20 @@
 #include <iostream>
-using namespace std;
 
-long long sum=0;
-int a[]={2,3,5,7,11,13,17};
-
-long long tolong(string s){
-    long long rv=0;
-    for(auto c:s)
-        rv=10*rv+c-'0';
-    return rv;
-}
-
-void perm(string s,string p=""){
-    int n=s.length();
-    if(n==9 && p[0]=='0') return;
-    for(int i=4;i<=10;i++)
-        if(n+i==10 && tolong(p.substr(i-3,3))%a[i-4]>0)
-            return;
-    if(n==0){
-        cout << p << "\n";
-        sum+=tolong(p);
+void search(long long n,int len,int mask,long long& sum){
+    static int a[]={2,3,5,7,11,13,17};
+    if(len>3 && (n%1000)%a[len-4]>0) return;
+    if(mask+1==1<<10){
+        std::cout << n << "\n";
+        sum+=n;
+        return;
     }
-    for(int i=0;i<n;i++)
-        perm(s.substr(0,i)+s.substr(i+1),p+s[i]);
+    for(int i=len==0?1:0;i<10;i++)
+        if(((mask>>i)&1)==0)
+            search(10*n+i,len+1,mask|(1<<i),sum);
 }
 
 int main(){
-    perm("1234567890");
-    cout << "sum:" << sum << "\n";
+    long long sum=0;
+    search(0,0,0,sum);
+    std::cout << sum;
 }

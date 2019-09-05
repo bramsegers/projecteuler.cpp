@@ -7,8 +7,7 @@ int max=1000000;
 int main(){
     
     int count=0;
-    InfInt f[N+1];
-    f[0]=InfInt(1);
+    InfInt* f=new InfInt[N+1]{1};
 
     for(int i=1;i<=N;i++)
         f[i]=InfInt(i)*f[i-1];

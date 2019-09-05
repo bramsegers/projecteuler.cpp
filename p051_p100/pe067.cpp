@@ -7,7 +7,7 @@ int main(){
         auto bs=strsplit(tri[i]," ");
         vector<int> b;
         for(int j=0;j<bs.size();j++){
-            int k=atoi(bs[j].c_str());
+            int k=stoi(bs[j]);
             if(a.size()) k+=max(a[j],a[j+1]);
             b.push_back(k);
         }

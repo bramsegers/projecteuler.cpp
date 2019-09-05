@@ -4,7 +4,7 @@ int N=10000;
 
 int main(){
     int sum=0;
-    int a[N+1]={};
+    int* a=new int[N+1];
     for(int d=1;d<=N;d++)
         for(int i=2*d;i<=N;i+=d)
             a[i]+=d;

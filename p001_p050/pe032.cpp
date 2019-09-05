@@ -1,30 +1,27 @@
 #include <set>
 #include <iostream>
-using namespace std;
 
 int sum=0;
-set<int> s;
+std::set<int> s;
 
-void check(string p,int i,int j,int k){
-    int a=atoi(p.substr(i,j).c_str());
-    int b=atoi(p.substr(j,k-j).c_str());
-    int c=atoi(p.substr(k).c_str());
+void check(int a,int b,int c){
     if(a==b*c){
-        cout << a << " " << b << " " << c << "\n";
+        std::cout << a << " " << b << " " << c << "\n";
         if(s.find(a)==s.end()) {s.insert(a);sum+=a;}
     }
 }
 
-void perm(string q,string p=""){
-    if(q.length()==0){
-        check(p,0,4,5);
-        check(p,0,4,6);
+void perm(int n,int mask){
+    if(mask+2==1<<10){
+        check(n/100000,(n/1000)%100,n%1000);
+        check(n/100000,(n/10000)%10,n%10000);
     }
-    for(int i=0;i<q.length();i++)
-        perm(q.substr(0,i)+q.substr(i+1),p+q[i]);        
-}    
+    for(int i=1;i<10;i++)
+        if(((mask>>i)&1)==0)
+            perm(10*n+i,mask|(1<<i));
+}
 
 int main(){
-    perm("123456789");
+    perm(0,0);
     std::cout << sum;
 }

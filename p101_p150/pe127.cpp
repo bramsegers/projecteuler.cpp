@@ -1,18 +1,15 @@
 #include "../util/primes.h"
+#include "../util/gcd.h"
 #include <algorithm>
 #include <iostream>
 
 int C=120000;
 
-int gcd(int a,int b){
-    return b==0?a:gcd(b,a%b);
-}
-
 int main(){
 
     struct rad{int n;int r;};
-    rad * rads=new rad[C];
-    int * rad2=new int[C];
+    rad* rads=new rad[C];
+    int* rad2=new int[C];
     for(int n=0;n<C;n++)
         rads[n]={n,r:1};
 

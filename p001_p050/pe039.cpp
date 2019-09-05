@@ -1,10 +1,7 @@
+#include "../util/gcd.h"
 #include <stdio.h>
 
 int N=1000;
-
-int gcd(int m,int n){
-    return n==0?m:gcd(n,m%n);
-}    
 
 int main(){
     int s[3*N]={};

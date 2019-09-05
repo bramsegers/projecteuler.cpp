@@ -8,7 +8,7 @@ int E=10000;
 int main(){
     
     struct num{int n;int rad;};
-    num * nums=new num[N+1];
+    num* nums=new num[N+1];
     for(int n=0;n<=N;n++) 
         nums[n]={n,1};
     

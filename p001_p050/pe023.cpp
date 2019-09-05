@@ -3,9 +3,9 @@
 int main(){
 
     int n=28123;
-    int a[n+1]={};
-    int b[n+1]={};
-    int c[n+1]={};
+    int* a=new int[n+1];
+    int* b=new int[n+1];
+    int* c=new int[n+1];
 
     for(int d=1;d<=n;d++)
         for(int i=2*d;i<=n;i+=d)

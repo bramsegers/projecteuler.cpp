@@ -5,7 +5,7 @@ int b2=10;
 int N=1000000;
 
 bool palindrome(int n,int b){
-    static int i,j,a[10];
+    static int i,j,a[32];
     for(i=0;n>0;i++){
         a[i]=n%b;
         n/=b;

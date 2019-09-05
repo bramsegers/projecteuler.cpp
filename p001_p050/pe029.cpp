@@ -1,13 +1,12 @@
+#include "../util/infint.h";
 #include <iostream>
 #include <set>
-#include "../util/infint.h";
 
 int N=100;
 
 InfInt pow(int b,int e){
     InfInt f=1;
-    for(int i=0;i<e;i++)
-        f*=b;
+    for(int i=0;i<e;i++) f*=b;
     return f;
 }
 

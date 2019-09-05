@@ -1,11 +1,8 @@
+#include "../util/gcd.h"
 #include <stdio.h>
 #include <map>
 
 int N=1500000;
-
-int gcd(int m,int n){
-    return n==0?m:gcd(n,m%n);
-}
 
 int main(){
     std::map<int,int> s;
