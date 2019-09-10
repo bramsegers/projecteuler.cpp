@@ -1,5 +1,5 @@
 #include <iostream>
-using LL = long long;
+using LL=long long;
 
 int N=15;
 

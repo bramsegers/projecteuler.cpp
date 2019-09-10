@@ -1,7 +1,6 @@
 #include "../util/primes.h"
 #include <math.h>
 #include <iostream>
-
 using LL=long long;
 
 int D=10;
@@ -30,5 +29,5 @@ int main(){
             }
         }
     }
-    std::cout << sum;
+    printf("sum:%lld\n",sum);
 }

@@ -1,8 +1,6 @@
 #include <math.h>
 #include <iostream>
-
 using LL=long long;
-
 
 int main(){
 

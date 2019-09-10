@@ -1,7 +1,6 @@
 #include "../util/gcd.h"
 #include <math.h>
 #include <iostream>
-
 using LL=long long;
 
 LL N=1e12;

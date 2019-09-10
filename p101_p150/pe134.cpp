@@ -1,6 +1,5 @@
 #include "../util/primes.h"
 #include <iostream>
-
 using LL=long long;
 
 int N=1000000;
