@@ -2,7 +2,6 @@
 #include <set>
 #include <vector>
 #include <iostream>
-using namespace std;
 
 int maxreach=0;
 
@@ -13,7 +12,7 @@ double operate(double d1,double d2,int op){
               return d1*d2;
 }
 
-void evaluate(vector<double>& v,set<int>& reach){
+void evaluate(std::vector<double>& v,std::set<int>& reach){
     if (v.size()==1){
         int i=round(v[0]);
         if(abs(v[0]-i)<.00001) reach.insert(i);
@@ -41,14 +40,14 @@ void evaluate(vector<double>& v,set<int>& reach){
 
 void gen_digits(int t,int d,double* s){
     if(t==4){
-        vector<double> v(s,s+4);
-        set<int> reach;
+        std::vector<double> v(s,s+4);
+        std::set<int> reach;
         evaluate(v,reach);
         int n=0;
         while(reach.find(n+1)!=reach.end()) n++;
         if(n>maxreach){
             maxreach=n;
-            cout<<s[0]<<s[1]<<s[2]<<s[3]<<' '<<n<<'\n';
+            std::cout<<s[0]<<s[1]<<s[2]<<s[3]<<' '<<n<<'\n';
         }
     }
     else for(int i=d;i<10;i++){

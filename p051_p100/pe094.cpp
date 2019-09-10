@@ -1,6 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-using LL = long long;
+using LL=long long;
 
 LL N=1000000000;
 

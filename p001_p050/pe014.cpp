@@ -1,5 +1,5 @@
 #include <iostream>
-using LL = unsigned long long;
+using LL=long long;
 
 LL N=1000000;
 

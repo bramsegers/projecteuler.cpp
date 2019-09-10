@@ -3,7 +3,6 @@
 #include <math.h>
 #include <iostream>
 #include <vector>
-using namespace std;
 
 int N=1000;
 
@@ -14,7 +13,7 @@ int main(){
         double s=sqrt(D);
         int b=s;
         if(b*b==D) continue;
-        vector<int> cf;
+        std::vector<int> cf;
         int m,a=1,a0=a,b0=b;
         for(m=1;;m++){
             int c=D-b*b;
@@ -43,6 +42,6 @@ int main(){
             dMax=D;
         }
     }
-    cout << "x max : " << xMax << "\n";
-    cout << "D max : " << dMax << "\n";
+    std::cout << "x max : " << xMax << "\n";
+    std::cout << "D max : " << dMax << "\n";
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "../util/primes.h"
-using namespace std;
 
+//int N=7;
 int N=8;
 
 int replace(int n,int i,int j){
@@ -29,20 +29,20 @@ int main(){
         for(int k=0;dig>0;k++,dig/=2){
             if(!(dig&1)) continue;
             int count=0;
-            string out="";
+            std::string out="";
             for(int i=0;i<10;i++){
                 int fam=replace(p,k,i);
                 if(fam>0 && primes.get(fam)){
                     count++;
-                    out+=to_string(fam)+" ";
+                    out+=std::to_string(fam)+" ";
                 }
             }
             if(count>=N){
-                cout << out << "\n";
+                std::cout << out << "\n";
                 return 0;
             }
         }
     }
-    cout << "Not found in prime range\n";
+    std::cout << "Not found in prime range\n";
     return -1;
 }

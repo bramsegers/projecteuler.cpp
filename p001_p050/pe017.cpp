@@ -1,9 +1,7 @@
-#include <iostream>
-#include <math.h>
 #include "../util/strings.h"
-
-using LL = unsigned long long;
-using namespace std;
+#include <math.h>
+#include <iostream>
+using LL = long long;
 
 LL N=1000;
 
